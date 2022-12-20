@@ -8,11 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <sript defer src="/assets/js/script.js"></sript>
     <title>Football Quiz</title>
 </head>
 <body>
-   <div class="container">
-    <h1 class="heading">Football Quiz</h1>
+    <!--heading with text-->
+        <h1 class="heading">Football Quiz</h1>    
+    
+    <!--middle section with question and answers-->
+   <section class="container">
+    
+    <div class="middle">
     <div id="question-container" class="hide">
         <div id="question">Question</div>
         <div id="answer-buttons" class="btn-grid">
@@ -22,18 +29,22 @@
             <button class="btn">Answer 4</button>
         </div>
     </div>
+
     <div class="controls">
         <button id="start-btn" class="start-btn btn">Start</button>
         <button id="next-btn" class="next-btn btn hide">Next</button>
     </div>
-
+</section>
 
    </div>
-
+<!--bootom section with scores-->
+<footer>
     <div class="score-area">
         <p class="scores">Correct Answers <span id="incorrect">0</span></p>
         <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
     </div>
+</footer>
+
     <script src="/assets/js/script.js"></script>
 </body>
 </html>

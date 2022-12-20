@@ -1,3 +1,44 @@
-body {
-    background-image:url(../images/pexels-photo-274506.jpeg);
+*, * ::before, * ::after {
+box-sizing: border-box;
+font-family: zen-dots, sans-serif;
+}
+
+/* body code, taken from web dev simplified*/
+body {background-image:url(../images/pexels-photo-274506.jpeg);
+
+}
+.container {
+    padding:0%;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+
+}
+.middle {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.heading {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin:20px 0;
+
 }
