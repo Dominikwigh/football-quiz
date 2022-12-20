@@ -42,3 +42,37 @@ h1 {
     margin:20px 0;
 
 }
+
+.btn {
+    background-color: white;
+    padding: 5px 10px;
+    
+}
+
+.btn:hover {
+    border-color: red;
+}
+
+.btn.correct{
+    --hue: var(hue-correct);
+}
+
+.btn.wrong {
+    --hue: var(hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
