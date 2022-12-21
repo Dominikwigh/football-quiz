@@ -5,18 +5,16 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 let shuffledQuestions;
 let currentQuestionIndex;
-const a_text = document.getElementById("a_text");
-const b_text = document.getElementById("b_text");
-const c_text = document.getElementById("c_text");
-const d_text = document.getElementById("d_text");
+let shuffleAnswers;
 
-startButton.addEventListener('click', runGame);
+startButton.addEventListener('click', startGame);
 
-function runGame(){
+function startGame(){
     console.log('started-game');
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
+    shuffleAnswers = shuffleQuestions[0].answers.sort(() => Math.random() - .5);
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 
@@ -25,6 +23,8 @@ function runGame(){
 function setNextQuestion(){
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
+    
+    
 }
 
 function showQuestion(question){
@@ -51,52 +51,51 @@ function resetState() {
 function selectAnswer(){
 
 }
-//Questions 
+//Quiz questions 
 const questions = [
     {
         question: 'The Scudetto is the name given to the league title in which European country?',
-            a: 'Portugal',
-            b: 'Spain',
-            c: 'Italy',
-            d: 'England',
-            correct: 'c'
-        
-        
+        answers: [ { text:'Portugal', correct:'false'},
+                   { text:'Spain', correct:'false'},
+                   { text:'Italy', correct:'true'},
+                   { text:'England', correct:'false'},
+                 ] 
+    
     },
-    {
+    {   
         question: 'Red Bull own a football club based in which Austrian city?',
-            a: 'Leipzig',
-            b: 'Vienna',
-            c: 'Graz',
-            d: 'Salzburg',
-            correct: 'a'
+        answers: [ { text:'Leipzig', correct:'true'},
+                   { text:'Vienna', correct:'false'},
+                   { text:'Graz', correct:'false'},
+                   { text:'Salzburg', correct:'false'},
+                 ] 
 
     },
     {
         question: 'Which 2 teams play in The Barcelona Derby?',
-            a: 'FC Barcelona and Real Madrid',
-            b: 'FC Barcelona and RCD Espanyol',
-            c: 'RCD Espanyol and Villareal',
-            d: 'Elche and Celta Vigo',
-            correct: 'b'
-
+        answers: [ { text:'FC Barcelona and Real Madrid', correct:'false'},
+                   { text:'FC Barcelona and RCD Espanyol', correct:'true'},
+                   { text:'RCD Espanyol and Villareal', correct:'false'},
+                   { text:'Elche and Celta Vigo', correct:'false'},
+                ] 
+            
     },
     {
         question: 'What stadium is home to Bayern Munich?',
-            a: 'Allianz Arena',
-            b: 'Allianz Stadium',
-            c: 'Camp Nou',
-            d: 'Old Trafford',
-            correct: 'a'
-
+        answers: [ { text:'Allianz Arena', correct:'true'},
+                   { text:'Allianz Stadium', correct:'false'},
+                   { text:'Camp Nou', correct:'false'},
+                   { text:'Old Trafford', correct:'false'},
+                 ] 
     },
     {
         question: 'How many teams play in the group stages of the UEFA Champions League?',
-            a: '10 Teams',
-            b: '20 Teams',
-            c: '25 Teams',
-            d: '32 Teams',
-            correct: 'd'
+        answers: [ { text:'10 Teams', correct:'false'},
+                   { text:'20 Teams', correct:'false'},
+                   { text:'25 Teams', correct:'false'},
+                   { text:'32 Teams', correct:'true'},
+                 ] 
 
-    }
+
+    },
 ];
