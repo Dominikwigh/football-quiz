@@ -70,6 +70,7 @@ function selectAnswer(e){
     const correct = selectedAnswer.dataset.correct;
     if (selectedAnswer.dataset.correct) {
         score += 1;
+        
     }
     Array.from(answerButtons.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
@@ -80,16 +81,16 @@ function selectAnswer(e){
         nextButton.classList.remove('hide');
 
     } else {
-        startButton.innerText = 'restart';
+        startButton.innerText = 'Restart Quiz';
         startButton.classList.remove('hide')
-        alert(`You got ${score} out of ${totalQuestions} `);
+        alert(`You got ${score} out of ${totalQuestions} questions right!`);
         
     
     }
 
 }
 /**
- * if answer is correct log as correct, if wrong log as wrong 
+ * if answer is correct show green color, if wrong show red color 
  */
 function setStatusClass(element, correct ) {
     clearStatusClass(element);
@@ -100,54 +101,55 @@ function setStatusClass(element, correct ) {
     
     }
 }
-
+// removes color on next question
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
 //Quiz questions in a array 
+// questions taken from https://kwizzbit.com/football-quiz-questions-and-answers/
 const questions = [
     {
         question: 'The Scudetto is the name given to the league title in which European country?',
-        answers: [ { text:'Portugal', correct:'false'},
-                   { text:'Spain', correct:'false'},
-                   { text:'Italy', correct:'true'},
-                   { text:'England', correct:'false'},
+        answers: [ { text:'Portugal', correct:false},
+                   { text:'Spain', correct:false},
+                   { text:'Italy', correct:true},
+                   { text:'England', correct:false},
                  ] 
     
     },
     {   
         question: 'Red Bull own a football club based in which Austrian city?',
-        answers: [ { text:'Leipzig', correct:'true'},
-                   { text:'Vienna', correct:'false'},
-                   { text:'Graz', correct:'false'},
-                   { text:'Salzburg', correct:'false'}
+        answers: [ { text:'Leipzig', correct:true},
+                   { text:'Vienna', correct:false},
+                   { text:'Graz', correct:false},
+                   { text:'Salzburg', correct:false}
                  ] 
 
     },
     {
         question: 'Which 2 teams play in The Barcelona Derby?',
-        answers: [ { text:'FC Barcelona and Real Madrid', correct:'false'},
-                   { text:'FC Barcelona and RCD Espanyol', correct:'true'},
-                   { text:'RCD Espanyol and Villareal', correct:'false'},
-                   { text:'Elche and Celta Vigo', correct:'false'}
+        answers: [ { text:'FC Barcelona and Real Madrid', correct:false},
+                   { text:'FC Barcelona and RCD Espanyol', correct:true},
+                   { text:'RCD Espanyol and Villareal', correct:false},
+                   { text:'Elche and Celta Vigo', correct:false}
                 ] 
             
     },
     {
         question: 'What stadium is home to Bayern Munich?',
-        answers: [ { text:'Allianz Arena', correct:'true'},
-                   { text:'Allianz Stadium', correct:'false'},
-                   { text:'Camp Nou', correct:'false'},
-                   { text:'Old Trafford', correct:'false'}
+        answers: [ { text:'Allianz Arena', correct:true},
+                   { text:'Allianz Stadium', correct:false},
+                   { text:'Camp Nou', correct:false},
+                   { text:'Old Trafford', correct:false}
                  ] 
     },
     {
         question: 'How many teams play in the group stages of the UEFA Champions League?',
-        answers: [ { text:'10 Teams', correct:'false'},
-                   { text:'20 Teams', correct:'false'},
-                   { text:'25 Teams', correct:'false'},
-                   { text:'32 Teams', correct:'true'}
+        answers: [ { text:'10 Teams', correct:false},
+                   { text:'20 Teams', correct:false},
+                   { text:'25 Teams', correct:false},
+                   { text:'32 Teams', correct:true}
                  ] 
     },
 ];

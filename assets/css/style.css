@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Zen+Dots&display=swap');
+
+/* css partly taken from web dev simplified*/
 *, * ::before, * ::after {
 box-sizing: border-box;
 font-family: zen-dots, sans-serif;
@@ -5,11 +8,12 @@ font-family: zen-dots, sans-serif;
 
 /* body code, taken from web dev simplified*/
 body {background-image:url(../images/pexels-photo-274506.jpeg);
-
+    font-family: 'zen+dots', 'sans-serif';
 }
 #question {
     font-size: large;
 }
+
 .container {
     padding:0%;
     margin: 0;
@@ -28,9 +32,10 @@ body {background-image:url(../images/pexels-photo-274506.jpeg);
     padding: 10px;
     box-shadow: 0 0 10px 2px;
 }
+/* header*/
 
 .heading {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -43,12 +48,14 @@ h1 {
     display: grid;
     gap: 10px;
     margin:20px 0;
+   
 
 }
 
 .btn {
-    background-color: white;
+    background-color: black;
     padding: 5px 10px;
+    color:white;
     
 }
 
@@ -56,12 +63,12 @@ h1 {
     border-color: red;
 }
 
-.btn.correct{
-    --hue: var(hue-correct);
+.correct{
+    background-color: lightgreen;
 }
 
-.btn.wrong {
-    --hue: var(hue-wrong);
+.wrong {
+    background-color: red;
 }
 
 .start-btn, .next-btn {
@@ -78,4 +85,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+button.btn {
+    font-size: medium;
 }
