@@ -7,18 +7,22 @@ const answerButtons = document.getElementById('answer-buttons');
 let shuffleQuestions;
 let currentQuestion;
 let shuffleAnswers;
-
+//variables to keep score 
+let score;
+let totalQuestions = 5;
+// eventlisteners to start game and go to next question 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestion++
     setNextQuestion();
 })
+//starts game and shuffels questions and answers
 function startGame(){
     startButton.classList.add('hide');
     shuffleQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestion = 0;
     shuffleAnswers = shuffleQuestions[0].answers.sort(() => Math.random() - .5);
-    currentQuestion = 0;
+    score = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 
@@ -27,10 +31,13 @@ function startGame(){
 function setNextQuestion() {
     resetState();
     showQuestion(shuffleQuestions[currentQuestion]);
+    //
+    `Current Question: ${currentQuestion + 1} out of ${totalQuestions}`;
+    `Correct answers: ${score} out of ${currentQuestion}`;
     
     
 }
-
+//show question and click answer 
 function showQuestion(question) {
      questionElement.innerText = question.question;
      question.answers.forEach(answer => {
@@ -47,7 +54,10 @@ function showQuestion(question) {
         answerButtons.appendChild(button);
      });
  }
-
+/**
+ * removes next button until user has clicked answer 
+ * code taken from 
+ */
 function resetState() {
     nextButton.classList.add('hide');
     while (answerButtons.firstChild) {
@@ -56,28 +66,46 @@ function resetState() {
 };
 
 function selectAnswer(e){
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
+    const selectedAnswer = e.target;
+    const correct = selectedAnswer.dataset.correct;
+    if (selectedAnswer.dataset.correct) {
+        score += 1;
+    }
     Array.from(answerButtons.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
-    })
-    nextButton.classList.remove('hide');
+        button.disabled = true;
+    });
+    
+    if (shuffleQuestions.length > currentQuestion + 1) {
+        nextButton.classList.remove('hide');
+
+    } else {
+        startButton.innerText = 'restart';
+        startButton.classList.remove('hide')
+        alert(`You got ${score} out of ${totalQuestions} `);
+        
+    
+    }
 
 }
+/**
+ * if answer is correct log as correct, if wrong log as wrong 
+ */
 function setStatusClass(element, correct ) {
-    clearStatusCLass(element);
+    clearStatusClass(element);
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     
     }
 }
-function clearStatusCLass(element) {
+
+function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
-//Quiz questions 
+//Quiz questions in a array 
 const questions = [
     {
         question: 'The Scudetto is the name given to the league title in which European country?',
