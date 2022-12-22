@@ -2,44 +2,51 @@ const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
-const answerButtonsElement = document.getElementById('answer-buttons');
-let shuffledQuestions;
-let currentQuestionIndex;
+const answerButtons = document.getElementById('answer-buttons');
+//variables to display questions
+let shuffleQuestions;
+let currentQuestion;
 let shuffleAnswers;
 
 startButton.addEventListener('click', startGame);
-
+nextButton.addEventListener('click', () => {
+    currentQuestion++
+    setNextQuestion();
+})
 function startGame(){
-    console.log('started-game');
     startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-    currentQuestionIndex = 0;
+    shuffleQuestions = questions.sort(() => Math.random() - 0.5);
+    currentQuestion = 0;
     shuffleAnswers = shuffleQuestions[0].answers.sort(() => Math.random() - .5);
+    currentQuestion = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 
 }
 
-function setNextQuestion(){
+function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    showQuestion(shuffleQuestions[currentQuestion]);
     
     
 }
 
-function showQuestion(question){
+function showQuestion(question) {
      questionElement.innerText = question.question;
      question.answers.forEach(answer => {
-        const button = createElement('button');
+        const button = document.createElement('button');
         button.innerText = answer.text;
         button.classList.add('btn');
-        if (answer-correct) {
-            button.dataset.correct = answer.correct 
-        };
+        button.addEventListener('click', function() {
+            button.classList.add('click');
+        });
+        if (answer.correct) {
+            button.dataset.correct = answer.correct; 
+        }
         button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-     })
-    };
+        answerButtons.appendChild(button);
+     });
+ }
 
 function resetState() {
     nextButton.classList.add('hide');
@@ -48,8 +55,27 @@ function resetState() {
     }
 };
 
-function selectAnswer(){
+function selectAnswer(e){
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    Array.from(answerButtons.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    })
+    nextButton.classList.remove('hide');
 
+}
+function setStatusClass(element, correct ) {
+    clearStatusCLass(element);
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    
+    }
+}
+function clearStatusCLass(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 //Quiz questions 
 const questions = [
@@ -67,7 +93,7 @@ const questions = [
         answers: [ { text:'Leipzig', correct:'true'},
                    { text:'Vienna', correct:'false'},
                    { text:'Graz', correct:'false'},
-                   { text:'Salzburg', correct:'false'},
+                   { text:'Salzburg', correct:'false'}
                  ] 
 
     },
@@ -76,7 +102,7 @@ const questions = [
         answers: [ { text:'FC Barcelona and Real Madrid', correct:'false'},
                    { text:'FC Barcelona and RCD Espanyol', correct:'true'},
                    { text:'RCD Espanyol and Villareal', correct:'false'},
-                   { text:'Elche and Celta Vigo', correct:'false'},
+                   { text:'Elche and Celta Vigo', correct:'false'}
                 ] 
             
     },
@@ -85,7 +111,7 @@ const questions = [
         answers: [ { text:'Allianz Arena', correct:'true'},
                    { text:'Allianz Stadium', correct:'false'},
                    { text:'Camp Nou', correct:'false'},
-                   { text:'Old Trafford', correct:'false'},
+                   { text:'Old Trafford', correct:'false'}
                  ] 
     },
     {
@@ -93,9 +119,7 @@ const questions = [
         answers: [ { text:'10 Teams', correct:'false'},
                    { text:'20 Teams', correct:'false'},
                    { text:'25 Teams', correct:'false'},
-                   { text:'32 Teams', correct:'true'},
+                   { text:'32 Teams', correct:'true'}
                  ] 
-
-
     },
 ];
