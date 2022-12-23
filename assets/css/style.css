@@ -3,7 +3,7 @@
 /* css partly taken from web dev simplified*/
 *, * ::before, * ::after {
 box-sizing: border-box;
-font-family: zen-dots, sans-serif;
+font-family: Zen+Dots, sans-serif;
 }
 /* header */
 
@@ -32,19 +32,20 @@ font-family: zen-dots, sans-serif;
     text-align:left;
     font-size: 1rem;
     
+}
 
-    
-    
+.hidden {
+    display: none;
 }
 
 
 /* body code, taken from web dev simplified*/
 body {background-image:url(../images/pexels-photo-274506.jpeg);
-    font-family: 'zen+dots', 'sans-serif';
+    font-family: Zen+Dots, sans-serif;
 }
 #question {
     font-size: large;
-    font-family: zen+dots, sans-serif;
+    
 }
 
 .container {

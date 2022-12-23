@@ -112,19 +112,23 @@ function clearStatusClass(element) {
     element.classList.remove('wrong');
 }
 
-// Timer to let user known how much they have left to complete quiz
+// Timer to let user known how much they have left to complete quiz 
+// if time runs out there is a option to restart
 function startTimer (){
-    let currentTime = 60;
-gameTimer = setIntervalTimer(function () {
+    let currentTime = 40;
+    gameTimer = setInterval(function () {
     currentTime--;
     if (currentTime > 0 ) {
+        timer.classList.remove('hidden');
         timer.innerText = `Time Left:${currentTime}`;
-    } else if (currentTime === 0); {
+    } else if (currentTime === 0) {
     alert('Sorry You Ran Out Of Time');
-    timer.classList.remove('hide');
+    startButton.innerText = 'Restart Quiz';
+        startButton.classList.remove('hide')
+    
 
    }
-  }, 600);
+  }, 400);
 }
 
 //Quiz questions in a array 
@@ -173,4 +177,5 @@ const questions = [
                    { text:'32 Teams', correct:true}
                  ] 
     },
+    
 ];
