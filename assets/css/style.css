@@ -5,6 +5,18 @@
 box-sizing: border-box;
 font-family: zen-dots, sans-serif;
 }
+/* header */
+
+.football {
+    width: 5vh;
+    height: 5vh;
+    display: block;
+    float: right;
+    position: relative;
+    margin-right: 480px;
+    top:-80px;
+    
+}
 
 /* body code, taken from web dev simplified*/
 body {background-image:url(../images/pexels-photo-274506.jpeg);

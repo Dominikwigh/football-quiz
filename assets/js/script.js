@@ -120,10 +120,10 @@ const questions = [
     },
     {   
         question: 'Red Bull own a football club based in which Austrian city?',
-        answers: [ { text:'Leipzig', correct:true},
+        answers: [ { text:'Salzburg', correct:true},
                    { text:'Vienna', correct:false},
                    { text:'Graz', correct:false},
-                   { text:'Salzburg', correct:false}
+                   { text:'Innsbruck', correct:false}
                  ] 
 
     },
