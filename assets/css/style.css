@@ -18,12 +18,31 @@ font-family: zen-dots, sans-serif;
     
 }
 
+/*Timer*/
+.timer {
+    width: 200px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    float: right;
+    margin-right: -160px;
+    padding: 5px 10px;
+    
+
+    
+    
+}
+
+
 /* body code, taken from web dev simplified*/
 body {background-image:url(../images/pexels-photo-274506.jpeg);
     font-family: 'zen+dots', 'sans-serif';
 }
 #question {
     font-size: large;
+    font-family: zen+dots, sans-serif;
 }
 
 .container {
@@ -76,11 +95,13 @@ h1 {
 }
 
 .correct{
-    background-color: lightgreen;
+    background-color: green;
+    color:black;
 }
 
 .wrong {
     background-color: red;
+    color: black;
 }
 
 .start-btn, .next-btn {
