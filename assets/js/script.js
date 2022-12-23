@@ -1,3 +1,5 @@
+// quiz functions
+// partly built using web dev simplified and https://www.sitepoint.com/simple-javascript-quiz/
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
@@ -10,6 +12,9 @@ let shuffleAnswers;
 //variables to keep score 
 let score;
 let totalQuestions = 5;
+//timer variabels 
+let timer = document.getElementById('timer');
+let gameTimer;
 // eventlisteners to start game and go to next question 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
@@ -25,13 +30,13 @@ function startGame(){
     score = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
+    startTimer();
 
 }
 
 function setNextQuestion() {
     resetState();
     showQuestion(shuffleQuestions[currentQuestion]);
-    //
     `Current Question: ${currentQuestion + 1} out of ${totalQuestions}`;
     `Correct answers: ${score} out of ${currentQuestion}`;
     
@@ -106,6 +111,22 @@ function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
+
+// Timer to let user known how much they have left to complete quiz
+function startTimer (){
+    let currentTime = 60;
+gameTimer = setIntervalTimer(function () {
+    currentTime--;
+    if (currentTime > 0 ) {
+        timer.innerText = `Time Left:${currentTime}`;
+    } else if (currentTime === 0); {
+    alert('Sorry You Ran Out Of Time');
+    timer.classList.remove('hide');
+
+   }
+  }, 600);
+}
+
 //Quiz questions in a array 
 // questions taken from https://kwizzbit.com/football-quiz-questions-and-answers/
 const questions = [
