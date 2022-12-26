@@ -5,6 +5,7 @@
 box-sizing: border-box;
 font-family: Zen+Dots, sans-serif;
 }
+
 /* header */
 
 .football {
@@ -30,7 +31,7 @@ font-family: Zen+Dots, sans-serif;
     margin-right: -160px;
     padding: 5px 10px;
     text-align:left;
-    font-size: 1rem;
+    font-size: 1.5rem;
     
 }
 
@@ -43,9 +44,9 @@ font-family: Zen+Dots, sans-serif;
 body {background-image:url(../images/pexels-photo-274506.jpeg);
     font-family: Zen+Dots, sans-serif;
 }
+
 #question {
-    font-size: large;
-    
+    font-size: 2rem;    
 }
 
 .container {
@@ -125,4 +126,13 @@ h1 {
 
 button.btn {
     font-size: medium;
+}
+/* media queries */
+@media only screen and (max-width:1500px ){
+.football {
+    display: none;
+}
+#timer {
+    margin-right: 50px;
+}
 }

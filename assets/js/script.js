@@ -9,6 +9,7 @@ const answerButtons = document.getElementById('answer-buttons');
 let shuffleQuestions;
 let currentQuestion;
 let shuffleAnswers;
+let correct;
 //variables to keep score 
 let score;
 let totalQuestions = 5;
@@ -18,9 +19,9 @@ let gameTimer;
 // eventlisteners to start game and go to next question 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
-    currentQuestion++
+    currentQuestion++;
     setNextQuestion();
-})
+});
 //starts game and shuffels questions and answers
 function startGame(){
     startButton.classList.add('hide');
@@ -33,7 +34,7 @@ function startGame(){
     startTimer();
 
 }
-
+// takes a random question and answer from the array and log as correct or wrong when user answers
 function setNextQuestion() {
     resetState();
     showQuestion(shuffleQuestions[currentQuestion]);
@@ -68,7 +69,7 @@ function resetState() {
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
-};
+}
 
 function selectAnswer(e){
     const selectedAnswer = e.target;
@@ -87,10 +88,9 @@ function selectAnswer(e){
 
     } else {
         startButton.innerText = 'Restart Quiz';
-        startButton.classList.remove('hide')
+        startButton.classList.remove('hide');
         alert(`You got ${score} out of ${totalQuestions} questions right!`);
         
-    
     }
 
 }
@@ -115,20 +115,20 @@ function clearStatusClass(element) {
 // Timer to let user known how much they have left to complete quiz 
 // if time runs out there is a option to restart
 function startTimer (){
-    let currentTime = 40;
+    let currentTime = 60;
     gameTimer = setInterval(function () {
     currentTime--;
     if (currentTime > 0 ) {
         timer.classList.remove('hidden');
         timer.innerText = `Time Left:${currentTime}`;
     } else if (currentTime === 0) {
-    alert('Sorry You Ran Out Of Time');
+    alert('Sorry You Ran Out Of Time, Restart Quiz to Play Again!');
     startButton.innerText = 'Restart Quiz';
-        startButton.classList.remove('hide')
+    startButton.classList.remove('hide');
     
 
    }
-  }, 400);
+  }, 600);
 }
 
 //Quiz questions in a array 
