@@ -126,9 +126,14 @@ function startTimer (){
     startButton.innerText = 'Restart Quiz';
     startButton.classList.remove('hide');
     
+    
 
    }
   }, 600);
+}
+// Reset timer when it hits zero 
+function stopTimer() {
+    clearInterval(gameTimer);
 }
 
 //Quiz questions in a array 

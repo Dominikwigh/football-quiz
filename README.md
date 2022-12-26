@@ -51,6 +51,19 @@ The main quiz contains a question at the top and four different answers when a a
 ### End message ### 
 When the quiz is completed there is a alert message with the scores shown
 
+## Technologies Used ## 
+* HTML 
+* CSS
+* JavaScript 
+* Google Fonts 
+* Chrome Dev Tools 
+* GitHub 
+* Gitpod 
+* Favicon 
+--- 
+## Testing ## 
+
+
 
 
  
