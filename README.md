@@ -37,20 +37,23 @@ This webite allows users to check their knowledge on football.
 ## Features ##
 --- 
 ### Start Screen ### 
-image 
+ ![Start screen image](/assets/images/question.png)
 The start screen is containing a black heading of "footbal quiz" with a football image beside.
 In the middle of the page there is a button with the text "start quiz!", when clicked it starts quiz  
 ### Quiz Section ### 
 The quiz section still contains header but now also with a timer and the main quiz conatiner 
 * Timer 
   * The timer is Located between the heading and main quiz section and runs from 60sec down when start quiz is clicked 
-   image 
   * If the time runs out the user will get a alert message with the text "Sorry You ran out of time"
+  ![Image of the timer](/assets/images/timer.png)
 * Main quiz 
 The main quiz contains a question at the top and four different answers when a answer is selcted it shows directly if wrong or correct with colors red or green. And when a answer is cliked the nect button shows up and the user can navigate to the next question
+![Correct or incorrect answer iamge](/assets/images/right%20or%20wrong.png)
+* When the quiz is completed a button with the text restart quiz shows up and there is a possibilty to restart the quiz 
+![Image of restart quiz](/assets/images/restart%20quiz.png) 
 ### End message ### 
 When the quiz is completed there is a alert message with the scores shown
-
+![Image of alert when quiz is completed](/assets/images/alert.png)
 ## Technologies Used ## 
 * HTML 
 * CSS
