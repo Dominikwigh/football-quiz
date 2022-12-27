@@ -67,13 +67,16 @@ When the quiz is completed there is a alert message with the scores shown
 ## Testing ## 
 * *I have tested so that this website work on different browsers
 * I have tested so that the website is responsive using devtools
-### validator testing###
+### validator testing ###
 * I have tested the code through the validators and no errors were shown
-images 
+![Image of html validattion](/assets/images/html%20validator.png)
+![Image of css validation](/assets/images/css%20validator.png)
+![Image of jshint, js validator](/assets/images/jshint%20validator.png)
 
 ## Accesibility ##
-* The website recived high scores when checked thorugh lighthouse 
-images 
+* The website recived high scores when checked thorugh lighthouse both and mobile and desktop
+![Image of lighthouse score, desktop](/assets/images/computer%20lh.png)
+![Image of lighthouse score, mobile](/assets/images/mobile%20lh.png)
 
 ## Bugs ##
 * There are no currently known bugs in the code 
