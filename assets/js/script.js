@@ -9,7 +9,6 @@ const answerButtons = document.getElementById('answer-buttons');
 let shuffleQuestions;
 let currentQuestion;
 let shuffleAnswers;
-let correct;
 //variables to keep score 
 let score;
 let totalQuestions = 5;
@@ -27,7 +26,7 @@ function startGame(){
     startButton.classList.add('hide');
     shuffleQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestion = 0;
-    shuffleAnswers = shuffleQuestions[0].answers.sort(() => Math.random() - .5);
+    shuffleAnswers = shuffleQuestions[0].answers.sort(() => Math.random() - 0.5);
     score = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -38,8 +37,8 @@ function startGame(){
 function setNextQuestion() {
     resetState();
     showQuestion(shuffleQuestions[currentQuestion]);
-    `Current Question: ${currentQuestion + 1} out of ${totalQuestions}`;
-    `Correct answers: ${score} out of ${currentQuestion}`;
+    const score =`Current Question: ${currentQuestion + 1} out of ${totalQuestions}`;
+    shuffleAnswers = `Correct answers: ${score} out of ${currentQuestion}`;
     
     
 }
@@ -62,7 +61,7 @@ function showQuestion(question) {
  }
 /**
  * removes next button until user has clicked answer 
- * code taken from 
+ * code for this taken from "web dev simplified"
  */
 function resetState() {
     nextButton.classList.add('hide');
@@ -70,10 +69,14 @@ function resetState() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
+/**
+ * Code for this taken from web dev simplified 
+ * checks if selected answer is correct and if it is,  its incremented by one 
+ * checks for questions and if there is no more to display, a alert message is shown 
+ */
 function selectAnswer(e){
     const selectedAnswer = e.target;
-    const correct = selectedAnswer.dataset.correct;
+    
     if (selectedAnswer.dataset.correct) {
         score += 1;
         
@@ -131,10 +134,7 @@ function startTimer (){
    }
   }, 600);
 }
-// Reset timer when it hits zero 
-function stopTimer() {
-    clearInterval(gameTimer);
-}
+
 
 //Quiz questions in a array 
 // questions taken from https://kwizzbit.com/football-quiz-questions-and-answers/

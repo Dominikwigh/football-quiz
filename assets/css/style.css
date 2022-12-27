@@ -3,7 +3,6 @@
 /* css partly taken from web dev simplified*/
 *, * ::before, * ::after {
 box-sizing: border-box;
-font-family: Zen+Dots, sans-serif;
 }
 
 /* header */
@@ -48,7 +47,7 @@ body {background-image:url(../images/pexels-photo-274506.jpeg);
 #question {
     font-size: 2rem;    
 }
-
+/* code taken from web dev simplified*/
 .container {
     padding:0%;
     margin: 0;
@@ -59,6 +58,7 @@ body {background-image:url(../images/pexels-photo-274506.jpeg);
     align-items: center;
 
 }
+/* Code taken from web dev simplified */
 .middle {
     width: 800px;
     max-width: 80%;
