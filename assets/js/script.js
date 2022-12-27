@@ -11,11 +11,10 @@ let currentQuestion;
 let shuffleAnswers;
 //variables to keep score 
 let score;
-let totalQuestions = 5;
+let totalQuestions = 5; 
 //timer variabels 
 let timer = document.getElementById('timer');
 let gameTimer;
-let stopTimer;
 // eventlisteners to start game and go to next question 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
@@ -94,6 +93,8 @@ function selectAnswer(e){
         startButton.innerText = 'Restart Quiz';
         startButton.classList.remove('hide');
         alert(`You got ${score} out of ${totalQuestions} questions right!`);
+        stopTimer();
+        
         
     }
 
@@ -125,17 +126,17 @@ function startTimer (){
     if (currentTime > 0 ) {
         timer.classList.remove('hidden');
         timer.innerText = `Time Left:${currentTime}`;
-    } else if (currentTime === -0) {
+    } else if (currentTime === 0) {
     alert('Sorry You Ran Out Of Time, Restart Quiz to Play Again!');
     startButton.innerText = 'Restart Quiz';
     startButton.classList.remove('hide');
-    questionContainerElement.classList.add('hide')
-
-    
-    
-
+    questionContainerElement.classList.add('hide');    
+   stopTimer();
    }
   }, 600);
+}
+function stopTimer() {
+    clearInterval(gameTimer);
 }
 
 
