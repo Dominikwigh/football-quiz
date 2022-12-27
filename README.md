@@ -3,7 +3,7 @@
 This is a football quiz containing five questions with a timer of sixty seconds, and a alert message with correct/incorrect answers when completetd. 
 This webite allows users to check their knowledge on football. 
 ---
-image 
+![Responsive Design](/assets/images/responsive.png)
 
 ---
 ## Site Owner Goals ##
@@ -19,7 +19,7 @@ image
 * As a first time user i want to keep track of my score
 ### Design ###
 * Colors 
-image 
+![Colors on the website](/assets/images/colors.png)
 
 * The color of the buttons are White and Black
 * The background color is White, with a black background for the answers and a white text
@@ -27,7 +27,7 @@ image
 * The color for correct answer is green
 
 * Fonts 
-  * The Main font used on the website is Zen+Dots, its a sans-serif font. 
+  * The two fonts used on the website are Zen+Dots and lato, sans-serif fonts. 
 
 --- 
 * Imagery 
@@ -62,6 +62,19 @@ When the quiz is completed there is a alert message with the scores shown
 * Favicon 
 --- 
 ## Testing ## 
+* *I have tested so that this website work on different browsers
+* I have tested so that the website is responsive using devtools
+### validator testing###
+* I have tested the code through the validators and no errors were shown
+images 
+
+## Accesibility ##
+* The website recived high scores when checked thorugh lighthouse 
+images 
+
+## Bugs ##
+* There are no currently known bugs in the code 
+* Solved bugs 
 
 
 
