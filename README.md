@@ -45,8 +45,7 @@ The quiz section still contains header but now also with a timer and the main qu
   * The timer is located between the heading and the main quiz section and runs from 60sec down when start quiz is clicked. 
   * If the time runs out the user will get a alert message with the text "Sorry You ran out of time".
   ![Image of the timer](/assets/images/timer.png)
-* Main quiz 
-The main quiz contains a question at the top and four different answers when a answer is selcted it shows directly if wrong or correct with colors red or green. And when a answer is clicked the next button shows up and the user can navigate to the next question.
+* The main quiz contains a question at the top and four different answers when a answer is selected it shows directly if wrong or correct with colors red or green. And when a answer is clicked the next button shows up and the user can navigate to the next question.
 ![Correct or incorrect answer iamge](/assets/images/right%20or%20wrong.png)
 * When the quiz is completed a button with the text restart quiz shows up and there is a possibilty to restart the quiz. 
 
