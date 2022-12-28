@@ -1,10 +1,10 @@
 # Football Quiz # 
 
-This is a football quiz containing five questions with a timer of sixty seconds, and a alert message with correct/incorrect answers when completed. 
+* This is a football quiz containing five questions with a timer of sixty seconds, and a alert message with correct/incorrect answers when completed. 
 This webite allows users to check their knowledge on football. 
 ---
 ![Responsive Design](/assets/images/responsive.png)
-[Link to Website](https://dominikwigh.github.io/football-quiz/
+* [Link to Website](https://dominikwigh.github.io/football-quiz/
 ---
 ## Site Owner Goals ##
 * Create a quiz webiste with easy navigation.
@@ -31,23 +31,22 @@ This webite allows users to check their knowledge on football.
   * The two fonts used on the website are Zen+Dots and lato, sans-serif fonts. 
 
 --- 
-### All credited in the credit section ###
 ## Features ##
 
 ### Start Screen ### 
  ![Start screen image](/assets/images/question.png)
  ---
-The start screen is containing a black heading of "footbal quiz" with a football image beside.
-In the middle of the page there is a button with the text "start quiz!", when clicked it starts quiz.  
+* The start screen is containing a black heading with the text "football quiz" with a football image beside.
+In the middle of the page there is a button with the text "start quiz!", when clicked it starts the quiz.  
 ---
 ### Quiz Section ### 
-The quiz section still contains header but now also with a timer and the main quiz conatiner .
+The quiz section still contains header but now also with a timer and the main quiz container.
 * Timer 
-  * The timer is Located between the heading and main quiz section and runs from 60sec down when start quiz is clicked. 
+  * The timer is located between the heading and the main quiz section and runs from 60sec down when start quiz is clicked. 
   * If the time runs out the user will get a alert message with the text "Sorry You ran out of time".
   ![Image of the timer](/assets/images/timer.png)
 * Main quiz 
-The main quiz contains a question at the top and four different answers when a answer is selcted it shows directly if wrong or correct with colors red or green. And when a answer is cliked the nect button shows up and the user can navigate to the next question
+The main quiz contains a question at the top and four different answers when a answer is selcted it shows directly if wrong or correct with colors red or green. And when a answer is clicked the next button shows up and the user can navigate to the next question.
 ![Correct or incorrect answer iamge](/assets/images/right%20or%20wrong.png)
 * When the quiz is completed a button with the text restart quiz shows up and there is a possibilty to restart the quiz. 
 
@@ -63,20 +62,20 @@ When the quiz is completed there is a alert message with the scores shown.
 * Chrome Dev Tools 
 * GitHub 
 * Gitpod 
-* Favicon 
 --- 
 ## Testing ## 
 * I have tested so that this website work on different browsers.
-* I have tested so that the website is responsive using devtools.
+* I have tested so that the website is responsive using dev tools and a phone.
 ---
-### validator testing ###
+### Validator testing ###
 * I have tested the code through the validators and no errors were shown.
 ![Image of html validattion](/assets/images/html%20validator.png)
-![Image of css validation](/assets/images/css%20validator.png)
-![Image of jshint, js validator](/assets/images/jshint%20validator.png)
 [HTML](https://validator.w3.org/#validate_by_input
+![Image of css validation](/assets/images/css%20validator.png)
 [CSS](https://jigsaw.w3.org/css-validator/validator.html.en
+![Image of jshint, js validator](/assets/images/jshint%20validator.png)
 [JShint](https://jshint.com/
+---
 ## Accesibility ##
 * The website recived high scores when checked thorugh lighthouse both on mobile and desktop.
 ![Image of lighthouse score, desktop](/assets/images/computer%20lh.png)
@@ -97,21 +96,26 @@ When the quiz is completed there is a alert message with the scores shown.
 ---
 ### Github Pages ###
 * This website was deployed on github pages using the following steps. 
-  * In the guthub repository navigate to the settings tab. 
+  * In the github repository navigate to the settings tab. 
   * From settings navigate to the pages section. 
   * In the source section of the pages menu, select branch and change to main.
   * Click save and refresh page.
-  * At the top there will be a link to the website for you to follow.
+  * At the top there will be a link to the website for you to click.
 ---
 ## Credits ## 
+---
 ### Content ###
   * Code Institute template taken from [Named Link](https://github.com/Code-Institute-Org/gitpod-full-template
   * The fonts were taken from [Google fonts](https://fonts.google.com/
   * The background image was taken from [Pexels](https://www.pexels.com/sv-se/
   * The questions for the quiz were taken from [Kwizzbit](https://kwizzbit.com/football-quiz-questions-and-answers/
-  * The favicon were taken from [Named Link](http://www.google.fr/ 
   * Some parts of the quiz were taken from Web dev Simplified, "build a javascript quiz youtube video". All the code has been commented out.
   [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k
+---
+## Acknowledgments ##
+---
+* I want to thank my mentor Rory Patrick for all the help of completing my milestone project 2. 
+
 
 
 
