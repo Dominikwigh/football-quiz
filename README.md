@@ -82,7 +82,9 @@ When the quiz is completed there is a alert message with the scores shown.
 ![Image of lighthouse score, mobile](/assets/images/mobile%20lh.png)
 ---
 ## Bugs ##
-* There are no currently known bugs in the code.
+### Solved Bugs ### 
+* When testing the website i found that if the time had run out i was still able to select answers. To fix this i simply removed the next button, question and answers. Being left with the restart quiz button.  
+### There are no currently known bugs in the code ###
 ---
 ## Testing User Stories ##
 * As a first time user i want a easy way of starting the quiz.
